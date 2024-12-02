@@ -3,6 +3,12 @@ from annotated_text import annotated_text
 from nltk.sentiment import SentimentIntensityAnalyzer
 import nltk
 import base64
+# Ensure the required NLTK data is downloaded
+nltk.download('punkt')
+nltk.download('vader_lexicon', quiet=True)  # Optional for sentiment analysis
+
+# Now you can safely use the sentence tokenizer
+from nltk.tokenize import sent_tokenize
 
 # Function to load the image and convert it to base64
 def get_base64_of_bin_file(bin_file):
